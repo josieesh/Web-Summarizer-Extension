@@ -1,0 +1,40 @@
+body {
+    background-color: #FFFFFF;
+    min-width: 160px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+div {
+    padding: 3px;
+}
+
+button {
+    white-space: nowrap;
+    padding:0.35em 1.2em;
+    border:0.1em solid #0000007e;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Allerta';
+    font-weight:bold;
+    color:#000000;
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #ccccff;
+    font-family: 'Allerta';
+}
+button:hover{
+    color:#FFFFFF;
+    background-color:rgb(47, 0, 100);
+}
+
+p {
+    padding-top: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 12px;
+    font-family: 'Allerta';
+    min-width: 300px;
+}
