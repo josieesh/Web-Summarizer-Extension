@@ -19,11 +19,26 @@ chrome.runtime.onMessage.addListener(
       var html = new XMLSerializer().serializeToString(document);
       // Proceeds to read all text content and send back to background.js
       chrome.runtime.sendMessage({"message": "getSummary", "text": html}, function(response) {
-        console.log(response);
+        // Parse the response from the server
         var summary = JSON.stringify(response);
+        storeSummary(summary);
         chrome.runtime.sendMessage({"message":"returnSummary", "content": summary});
       });
     }
+    else if(request.message === 'getFromStorage') {
+      sendResponse(getFromStorage());
+    }
   }
 );
+
+function storeSummary(summary) {
+  // Put into session storage
+  sessionStorage.setItem('summary', summary);
+  console.log('storageeee');
+}
+
+function getFromStorage() {
+  console.log(sessionStorage.getItem('summary'));
+  return sessionStorage.getItem('summary');
+}
 

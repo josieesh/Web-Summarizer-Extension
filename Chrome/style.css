@@ -30,6 +30,11 @@ button:hover{
     background-color:rgb(47, 0, 100);
 }
 
+.popup-center {
+    text-align: center;
+    padding: 10px;
+}
+
 p {
     padding-top: 5px;
     padding-left: 3px;
@@ -37,4 +42,27 @@ p {
     font-size: 12px;
     font-family: 'Allerta';
     min-width: 300px;
+    text-align: center;
 }
+
+
+/* Loading Modal */
+
+#modal.loading {
+    margin: 0 auto;
+    z-index: 1000;
+    position: relative;
+    top: 10px;
+    bottom: 10px;
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid rgb(47, 0, 100);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
