@@ -1,15 +1,7 @@
-import http.server
-import socketserver
-import ssl
-from http.server import HTTPServer, BaseHTTPRequestHandler
-import NLP as NLP
-import json 
-from io import BytesIO
-
-
 from flask import Flask
 from flask import request
-
+import NLP as NLP
+import json
 
 app = Flask(__name__)
 
@@ -25,10 +17,11 @@ def getSummary():
                 "Summary": str(nlp.summary)
             })
         except Exception as e:
+            print(str(e))
             response = json.dumps({
-                "Error": str(e)
+                "Summary": "Something went wrong."
             })
-        
+
         return response
 
 app.run(host='0.0.0.0', debug=True, port=8000)
