@@ -33,8 +33,8 @@ chrome.browserAction.onClicked.addListener(function(tab) {
           cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
           credentials: 'same-origin', // include, *same-origin, omit
           headers: {
-              'Content-Type': 'text',
-              // 'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'text/plain; charset=utf-8',
+              //'Content-Type': 'application/x-www-form-urlencoded',
           },
           redirect: 'follow', // manual, *follow, error
           referrer: 'no-referrer', // no-referrer, *client
