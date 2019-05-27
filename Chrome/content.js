@@ -16,7 +16,8 @@
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if(request.message === "getSummary") {
-      var html = new XMLSerializer().serializeToString(document);
+      var html = (document.getElementsByTagName('html')[0].innerHTML);
+      console.log(html);
       // Proceeds to read all text content and send back to background.js
       chrome.runtime.sendMessage({"message": "getSummary", "text": html}, function(response) {
         // Parse the response from the server
@@ -34,11 +35,10 @@ chrome.runtime.onMessage.addListener(
 function storeSummary(summary) {
   // Put into session storage
   sessionStorage.setItem('summary', summary);
-  console.log('storageeee');
 }
 
 function getFromStorage() {
-  console.log(sessionStorage.getItem('summary'));
+  //console.log(sessionStorage.getItem('summary'));
   return sessionStorage.getItem('summary');
 }
 

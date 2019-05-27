@@ -9,10 +9,12 @@ app = Flask(__name__)
 def getSummary():
     if request.method == 'POST':
         body = request.data
+        #print(type(body))
+        #print(body)
         response = ''
 
         try:
-            nlp = NLP.NLP(str(body))
+            nlp = NLP.NLP(body)
             response = json.dumps({
                 "Summary": str(nlp.summary)
             })

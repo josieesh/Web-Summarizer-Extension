@@ -112,8 +112,8 @@ class NLP:
                 a.replaceWithChildren()
             h1_text = h1_text + tag.text + '\n'
 
-        # Remove non-ascii characters
-        self.text = text.encode('ascii', 'ignore').decode('ascii')
+        self.text = text
+
         self.h1_text = h1_text
 
 
